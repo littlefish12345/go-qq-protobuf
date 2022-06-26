@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/littlefish12345/go-qq-protobuf";
+
+message DeviceInfoBytesStruct {
+    string Bootloader = 1;
+    string ProcVersion = 2;
+    string CodeName = 3;
+    string Incremental = 4;
+    string FingerPrint = 5;
+    string BootId = 6;
+    string AndroidId = 7;
+    string BaseBand = 8;
+    string InnerVersion = 9;
+}
