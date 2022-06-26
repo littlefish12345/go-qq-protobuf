@@ -1,4 +1,4 @@
-module go-qq-protobuf
+module github.com/littlefish12345/go-qq-protobuf
 
 go 1.18
 
