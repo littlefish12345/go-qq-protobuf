@@ -130,33 +130,172 @@ func (m *DeviceInfoBytesStruct) GetInnerVersion() string {
 	return ""
 }
 
+type D50RequestStruct struct {
+	AppId                       uint64   `protobuf:"varint,1,opt,name=AppId,proto3" json:"AppId,omitempty"`
+	MaxPackageSize              uint32   `protobuf:"varint,2,opt,name=MaxPackageSize,proto3" json:"MaxPackageSize,omitempty"`
+	StartTime                   uint32   `protobuf:"varint,3,opt,name=StartTime,proto3" json:"StartTime,omitempty"`
+	StartIndex                  uint32   `protobuf:"varint,4,opt,name=StartIndex,proto3" json:"StartIndex,omitempty"`
+	RequestNum                  uint32   `protobuf:"varint,5,opt,name=RequestNum,proto3" json:"RequestNum,omitempty"`
+	UinList                     []uint64 `protobuf:"varint,6,rep,packed,name=UinList,proto3" json:"UinList,omitempty"`
+	RequestMusicSwitch          uint32   `protobuf:"varint,91001,opt,name=RequestMusicSwitch,proto3" json:"RequestMusicSwitch,omitempty"`
+	RequestMutualmarkAlienation uint32   `protobuf:"varint,101001,opt,name=RequestMutualmarkAlienation,proto3" json:"RequestMutualmarkAlienation,omitempty"`
+	RequestMutualmarkScore      uint32   `protobuf:"varint,141001,opt,name=RequestMutualmarkScore,proto3" json:"RequestMutualmarkScore,omitempty"`
+	RequestKsingSwitch          uint32   `protobuf:"varint,151001,opt,name=RequestKsingSwitch,proto3" json:"RequestKsingSwitch,omitempty"`
+	RequestMutalmarkLbsShare    uint32   `protobuf:"varint,181001,opt,name=RequestMutalmarkLbsShare,proto3" json:"RequestMutalmarkLbsShare,omitempty"`
+}
+
+func (m *D50RequestStruct) Reset()         { *m = D50RequestStruct{} }
+func (m *D50RequestStruct) String() string { return proto.CompactTextString(m) }
+func (*D50RequestStruct) ProtoMessage()    {}
+func (*D50RequestStruct) Descriptor() ([]byte, []int) {
+	return fileDescriptor_434ddb4d57c89a2a, []int{1}
+}
+func (m *D50RequestStruct) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *D50RequestStruct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_D50RequestStruct.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *D50RequestStruct) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_D50RequestStruct.Merge(m, src)
+}
+func (m *D50RequestStruct) XXX_Size() int {
+	return m.Size()
+}
+func (m *D50RequestStruct) XXX_DiscardUnknown() {
+	xxx_messageInfo_D50RequestStruct.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_D50RequestStruct proto.InternalMessageInfo
+
+func (m *D50RequestStruct) GetAppId() uint64 {
+	if m != nil {
+		return m.AppId
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetMaxPackageSize() uint32 {
+	if m != nil {
+		return m.MaxPackageSize
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetStartTime() uint32 {
+	if m != nil {
+		return m.StartTime
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetStartIndex() uint32 {
+	if m != nil {
+		return m.StartIndex
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetRequestNum() uint32 {
+	if m != nil {
+		return m.RequestNum
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetUinList() []uint64 {
+	if m != nil {
+		return m.UinList
+	}
+	return nil
+}
+
+func (m *D50RequestStruct) GetRequestMusicSwitch() uint32 {
+	if m != nil {
+		return m.RequestMusicSwitch
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetRequestMutualmarkAlienation() uint32 {
+	if m != nil {
+		return m.RequestMutualmarkAlienation
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetRequestMutualmarkScore() uint32 {
+	if m != nil {
+		return m.RequestMutualmarkScore
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetRequestKsingSwitch() uint32 {
+	if m != nil {
+		return m.RequestKsingSwitch
+	}
+	return 0
+}
+
+func (m *D50RequestStruct) GetRequestMutalmarkLbsShare() uint32 {
+	if m != nil {
+		return m.RequestMutalmarkLbsShare
+	}
+	return 0
+}
+
 func init() {
 	proto.RegisterType((*DeviceInfoBytesStruct)(nil), "DeviceInfoBytesStruct")
+	proto.RegisterType((*D50RequestStruct)(nil), "D50RequestStruct")
 }
 
 func init() { proto.RegisterFile("protobufStruct.proto", fileDescriptor_434ddb4d57c89a2a) }
 
 var fileDescriptor_434ddb4d57c89a2a = []byte{
-	// 292 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x54, 0x91, 0x41, 0x4a, 0xc3, 0x40,
-	0x14, 0x86, 0x9b, 0xaa, 0xb5, 0x19, 0x5d, 0x0d, 0x2a, 0x83, 0xc8, 0x50, 0xba, 0xd2, 0x45, 0x5b,
-	0xb4, 0x7a, 0x00, 0x53, 0x11, 0xb2, 0x91, 0xa2, 0xe0, 0xc2, 0x5d, 0x92, 0x79, 0x49, 0x07, 0x92,
-	0x79, 0x76, 0x32, 0x11, 0xbc, 0x85, 0x37, 0xf1, 0x1a, 0x2e, 0xbb, 0x74, 0x29, 0xc9, 0x45, 0x24,
-	0x13, 0xa3, 0x71, 0x97, 0xff, 0xfb, 0xfe, 0x07, 0x7f, 0x18, 0x72, 0xf0, 0xac, 0xd1, 0x60, 0x58,
-	0xc4, 0x0f, 0x46, 0x17, 0x91, 0x99, 0xda, 0x38, 0x7e, 0xef, 0x93, 0xc3, 0x1b, 0x78, 0x91, 0x11,
-	0xf8, 0x2a, 0x46, 0xef, 0xd5, 0x40, 0xde, 0x78, 0xca, 0x09, 0xf1, 0x10, 0x4d, 0x8a, 0x81, 0x00,
-	0xcd, 0x9c, 0x91, 0x73, 0xea, 0xde, 0x77, 0x08, 0x1d, 0x91, 0xbd, 0xa5, 0xc6, 0xe8, 0x11, 0x74,
-	0x2e, 0x51, 0xb1, 0xbe, 0x2d, 0x74, 0x11, 0x3d, 0x26, 0xc3, 0x05, 0x0a, 0xb8, 0x0b, 0x32, 0x60,
-	0x5b, 0x56, 0xff, 0xe6, 0xfa, 0xda, 0x57, 0x91, 0x86, 0x0c, 0x94, 0x09, 0x52, 0xb6, 0xdd, 0x5c,
-	0x77, 0x50, 0xdd, 0xb8, 0x95, 0x2a, 0x01, 0xbd, 0xd4, 0x52, 0x19, 0xb6, 0xd3, 0x34, 0x3a, 0x88,
-	0x1e, 0x91, 0x41, 0xbd, 0xc7, 0x17, 0x6c, 0x60, 0xe5, 0x4f, 0xa2, 0x27, 0xc4, 0xbd, 0x56, 0x42,
-	0xa3, 0x14, 0xbe, 0x60, 0xbb, 0x56, 0xfd, 0x81, 0x7a, 0x95, 0x17, 0xe4, 0xe0, 0x05, 0x4a, 0xb0,
-	0x61, 0xb3, 0xaa, 0xcd, 0x74, 0x4c, 0xf6, 0x7d, 0xa5, 0x40, 0xb7, 0x3f, 0xe5, 0x5a, 0xff, 0x8f,
-	0x79, 0x8b, 0x8f, 0x92, 0x3b, 0x9b, 0x92, 0x3b, 0x5f, 0x25, 0x77, 0xde, 0x2a, 0xde, 0xdb, 0x54,
-	0xbc, 0xf7, 0x59, 0xf1, 0xde, 0xd3, 0x59, 0x22, 0xcd, 0xaa, 0x08, 0xa7, 0x11, 0x66, 0xb3, 0x54,
-	0x1a, 0x93, 0x42, 0x2c, 0xf3, 0xd5, 0xf9, 0xc5, 0xfc, 0xf2, 0x6a, 0x96, 0xe0, 0x64, 0xbd, 0x9e,
-	0xb4, 0x4f, 0x10, 0x0e, 0xec, 0xd7, 0xfc, 0x3b, 0x00, 0x00, 0xff, 0xff, 0xe8, 0x78, 0x0d, 0x7e,
-	0x95, 0x01, 0x00, 0x00,
+	// 513 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x93, 0xcf, 0x6e, 0xd3, 0x4c,
+	0x14, 0xc5, 0xe3, 0x26, 0x75, 0x93, 0xe9, 0x97, 0x4f, 0x68, 0x54, 0xaa, 0x11, 0x20, 0x2b, 0xca,
+	0x02, 0x95, 0x45, 0xff, 0x40, 0xa9, 0xc4, 0x82, 0x4d, 0xdc, 0x0a, 0xc9, 0xa2, 0xad, 0x22, 0x1b,
+	0x58, 0xb0, 0x9b, 0xd8, 0x37, 0xce, 0xa8, 0xf6, 0x4c, 0x32, 0x33, 0x86, 0xc2, 0x03, 0x20, 0x75,
+	0xc7, 0x86, 0x15, 0x0f, 0xc1, 0x5b, 0x20, 0x58, 0x20, 0x75, 0x09, 0x3b, 0x94, 0x6c, 0x78, 0x05,
+	0x76, 0xc8, 0x63, 0xa7, 0x71, 0x81, 0xb2, 0xf3, 0xf9, 0x9d, 0x7b, 0xaf, 0x8e, 0x8f, 0x65, 0xb4,
+	0x36, 0x96, 0x42, 0x8b, 0x41, 0x36, 0x0c, 0xb4, 0xcc, 0x42, 0xbd, 0x65, 0x64, 0xf7, 0xc3, 0x12,
+	0xba, 0x7e, 0x00, 0x2f, 0x58, 0x08, 0x1e, 0x1f, 0x0a, 0xf7, 0x95, 0x06, 0x55, 0xf8, 0xd8, 0x41,
+	0xc8, 0x15, 0x42, 0x27, 0x82, 0x46, 0x20, 0x89, 0xd5, 0xb1, 0x36, 0x5a, 0x7e, 0x85, 0xe0, 0x0e,
+	0x5a, 0xed, 0x4b, 0x11, 0x3e, 0x03, 0xa9, 0x98, 0xe0, 0x64, 0xc9, 0x0c, 0x54, 0x11, 0xbe, 0x81,
+	0x9a, 0xfb, 0x22, 0x82, 0x63, 0x9a, 0x02, 0xa9, 0x1b, 0xfb, 0x42, 0xe7, 0xdb, 0x1e, 0x0f, 0x25,
+	0xa4, 0xc0, 0x35, 0x4d, 0x48, 0xa3, 0xd8, 0xae, 0xa0, 0x7c, 0xe2, 0x11, 0xe3, 0x31, 0xc8, 0xbe,
+	0x64, 0x5c, 0x93, 0xe5, 0x62, 0xa2, 0x82, 0xf0, 0x3a, 0xb2, 0xf3, 0x3c, 0x5e, 0x44, 0x6c, 0x63,
+	0x96, 0x0a, 0xdf, 0x42, 0xad, 0x1e, 0x8f, 0xa4, 0x60, 0x91, 0x17, 0x91, 0x15, 0x63, 0x2d, 0x40,
+	0x9e, 0xca, 0xa5, 0x0a, 0x5c, 0xca, 0x23, 0xd2, 0x2c, 0x52, 0xcd, 0x35, 0xee, 0xa2, 0xff, 0x3c,
+	0xce, 0x41, 0xce, 0x5f, 0xaa, 0x65, 0xfc, 0x4b, 0xac, 0xfb, 0xa3, 0x8e, 0xae, 0x1d, 0xec, 0xed,
+	0xf8, 0x30, 0xc9, 0x40, 0xe9, 0xb2, 0xac, 0x35, 0xb4, 0xdc, 0x1b, 0x8f, 0xbd, 0xc8, 0xf4, 0xd4,
+	0xf0, 0x0b, 0x81, 0x6f, 0xa3, 0xff, 0x8f, 0xe8, 0x69, 0x9f, 0x86, 0x27, 0x34, 0x86, 0x80, 0xbd,
+	0x06, 0xd3, 0x52, 0xdb, 0xff, 0x8d, 0xe6, 0x81, 0x03, 0x4d, 0xa5, 0x7e, 0xc2, 0xca, 0xa6, 0xda,
+	0xfe, 0x02, 0xe4, 0x1f, 0xc2, 0x08, 0x8f, 0x47, 0x70, 0x6a, 0x9a, 0x6a, 0xfb, 0x15, 0x92, 0xfb,
+	0x65, 0x98, 0xe3, 0x2c, 0x35, 0x3d, 0xb5, 0xfd, 0x0a, 0xc1, 0x04, 0xad, 0x3c, 0x65, 0xfc, 0x90,
+	0x29, 0x4d, 0xec, 0x4e, 0x7d, 0xa3, 0xe1, 0xcf, 0x25, 0xde, 0x41, 0xb8, 0x9c, 0x3b, 0xca, 0x14,
+	0x0b, 0x83, 0x97, 0x4c, 0x87, 0x23, 0xf2, 0xf3, 0x63, 0x71, 0xe3, 0x2f, 0x1e, 0x76, 0xd1, 0xcd,
+	0x0b, 0xaa, 0x33, 0x9a, 0xa4, 0x54, 0x9e, 0xf4, 0x12, 0x06, 0x9c, 0xea, 0xbc, 0xaf, 0xb3, 0x77,
+	0xb6, 0x59, 0xfd, 0xd7, 0x10, 0x7e, 0x80, 0xd6, 0xff, 0xb0, 0x83, 0x50, 0x48, 0x20, 0x9f, 0xbf,
+	0x34, 0xcd, 0xfa, 0x15, 0x7e, 0x25, 0xef, 0x63, 0xc5, 0x78, 0x5c, 0xe6, 0xfd, 0xf6, 0xbe, 0x75,
+	0x29, 0x6f, 0xc5, 0xc3, 0x0f, 0x11, 0x59, 0xdc, 0x2a, 0x4e, 0x1d, 0x0e, 0x54, 0x30, 0xa2, 0x12,
+	0xc8, 0xd9, 0x9b, 0x55, 0xb3, 0x77, 0xe5, 0x84, 0xbb, 0xff, 0x69, 0xea, 0x58, 0xe7, 0x53, 0xc7,
+	0xfa, 0x3e, 0x75, 0xac, 0xb7, 0x33, 0xa7, 0x76, 0x3e, 0x73, 0x6a, 0x5f, 0x67, 0x4e, 0xed, 0xf9,
+	0x9d, 0x98, 0xe9, 0x51, 0x36, 0xd8, 0x0a, 0x45, 0xba, 0x9d, 0x30, 0xad, 0x13, 0x18, 0x32, 0x35,
+	0xba, 0x7b, 0x6f, 0xf7, 0xfe, 0xde, 0x76, 0x2c, 0x36, 0x27, 0x93, 0xcd, 0xf9, 0xdf, 0x36, 0xb0,
+	0xcd, 0xd3, 0xee, 0xaf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xd5, 0x2c, 0x95, 0xee, 0x80, 0x03, 0x00,
+	0x00,
 }
 
 func (m *DeviceInfoBytesStruct) Marshal() (dAtA []byte, err error) {
@@ -245,6 +384,117 @@ func (m *DeviceInfoBytesStruct) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *D50RequestStruct) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *D50RequestStruct) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *D50RequestStruct) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.RequestMutalmarkLbsShare != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.RequestMutalmarkLbsShare))
+		i--
+		dAtA[i] = 0x58
+		i--
+		dAtA[i] = 0xb0
+		i--
+		dAtA[i] = 0xc8
+	}
+	if m.RequestKsingSwitch != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.RequestKsingSwitch))
+		i--
+		dAtA[i] = 0x49
+		i--
+		dAtA[i] = 0xdd
+		i--
+		dAtA[i] = 0xc8
+	}
+	if m.RequestMutualmarkScore != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.RequestMutualmarkScore))
+		i--
+		dAtA[i] = 0x44
+		i--
+		dAtA[i] = 0xec
+		i--
+		dAtA[i] = 0xc8
+	}
+	if m.RequestMutualmarkAlienation != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.RequestMutualmarkAlienation))
+		i--
+		dAtA[i] = 0x31
+		i--
+		dAtA[i] = 0xa8
+		i--
+		dAtA[i] = 0xc8
+	}
+	if m.RequestMusicSwitch != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.RequestMusicSwitch))
+		i--
+		dAtA[i] = 0x2c
+		i--
+		dAtA[i] = 0xb7
+		i--
+		dAtA[i] = 0xc8
+	}
+	if len(m.UinList) > 0 {
+		dAtA2 := make([]byte, len(m.UinList)*10)
+		var j1 int
+		for _, num := range m.UinList {
+			for num >= 1<<7 {
+				dAtA2[j1] = uint8(uint64(num)&0x7f | 0x80)
+				num >>= 7
+				j1++
+			}
+			dAtA2[j1] = uint8(num)
+			j1++
+		}
+		i -= j1
+		copy(dAtA[i:], dAtA2[:j1])
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(j1))
+		i--
+		dAtA[i] = 0x32
+	}
+	if m.RequestNum != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.RequestNum))
+		i--
+		dAtA[i] = 0x28
+	}
+	if m.StartIndex != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.StartIndex))
+		i--
+		dAtA[i] = 0x20
+	}
+	if m.StartTime != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.StartTime))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.MaxPackageSize != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.MaxPackageSize))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.AppId != 0 {
+		i = encodeVarintProtobufStruct(dAtA, i, uint64(m.AppId))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintProtobufStruct(dAtA []byte, offset int, v uint64) int {
 	offset -= sovProtobufStruct(v)
 	base := offset
@@ -297,6 +547,52 @@ func (m *DeviceInfoBytesStruct) Size() (n int) {
 	l = len(m.InnerVersion)
 	if l > 0 {
 		n += 1 + l + sovProtobufStruct(uint64(l))
+	}
+	return n
+}
+
+func (m *D50RequestStruct) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.AppId != 0 {
+		n += 1 + sovProtobufStruct(uint64(m.AppId))
+	}
+	if m.MaxPackageSize != 0 {
+		n += 1 + sovProtobufStruct(uint64(m.MaxPackageSize))
+	}
+	if m.StartTime != 0 {
+		n += 1 + sovProtobufStruct(uint64(m.StartTime))
+	}
+	if m.StartIndex != 0 {
+		n += 1 + sovProtobufStruct(uint64(m.StartIndex))
+	}
+	if m.RequestNum != 0 {
+		n += 1 + sovProtobufStruct(uint64(m.RequestNum))
+	}
+	if len(m.UinList) > 0 {
+		l = 0
+		for _, e := range m.UinList {
+			l += sovProtobufStruct(uint64(e))
+		}
+		n += 1 + sovProtobufStruct(uint64(l)) + l
+	}
+	if m.RequestMusicSwitch != 0 {
+		n += 3 + sovProtobufStruct(uint64(m.RequestMusicSwitch))
+	}
+	if m.RequestMutualmarkAlienation != 0 {
+		n += 3 + sovProtobufStruct(uint64(m.RequestMutualmarkAlienation))
+	}
+	if m.RequestMutualmarkScore != 0 {
+		n += 3 + sovProtobufStruct(uint64(m.RequestMutualmarkScore))
+	}
+	if m.RequestKsingSwitch != 0 {
+		n += 3 + sovProtobufStruct(uint64(m.RequestKsingSwitch))
+	}
+	if m.RequestMutalmarkLbsShare != 0 {
+		n += 3 + sovProtobufStruct(uint64(m.RequestMutalmarkLbsShare))
 	}
 	return n
 }
@@ -624,6 +920,322 @@ func (m *DeviceInfoBytesStruct) Unmarshal(dAtA []byte) error {
 			}
 			m.InnerVersion = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtobufStruct(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthProtobufStruct
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *D50RequestStruct) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtobufStruct
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: D50RequestStruct: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: D50RequestStruct: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field AppId", wireType)
+			}
+			m.AppId = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.AppId |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field MaxPackageSize", wireType)
+			}
+			m.MaxPackageSize = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.MaxPackageSize |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StartTime", wireType)
+			}
+			m.StartTime = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.StartTime |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StartIndex", wireType)
+			}
+			m.StartIndex = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.StartIndex |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestNum", wireType)
+			}
+			m.RequestNum = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestNum |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 6:
+			if wireType == 0 {
+				var v uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowProtobufStruct
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					v |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				m.UinList = append(m.UinList, v)
+			} else if wireType == 2 {
+				var packedLen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowProtobufStruct
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					packedLen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if packedLen < 0 {
+					return ErrInvalidLengthProtobufStruct
+				}
+				postIndex := iNdEx + packedLen
+				if postIndex < 0 {
+					return ErrInvalidLengthProtobufStruct
+				}
+				if postIndex > l {
+					return io.ErrUnexpectedEOF
+				}
+				var elementCount int
+				var count int
+				for _, integer := range dAtA[iNdEx:postIndex] {
+					if integer < 128 {
+						count++
+					}
+				}
+				elementCount = count
+				if elementCount != 0 && len(m.UinList) == 0 {
+					m.UinList = make([]uint64, 0, elementCount)
+				}
+				for iNdEx < postIndex {
+					var v uint64
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowProtobufStruct
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						v |= uint64(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					m.UinList = append(m.UinList, v)
+				}
+			} else {
+				return fmt.Errorf("proto: wrong wireType = %d for field UinList", wireType)
+			}
+		case 91001:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestMusicSwitch", wireType)
+			}
+			m.RequestMusicSwitch = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestMusicSwitch |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 101001:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestMutualmarkAlienation", wireType)
+			}
+			m.RequestMutualmarkAlienation = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestMutualmarkAlienation |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 141001:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestMutualmarkScore", wireType)
+			}
+			m.RequestMutualmarkScore = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestMutualmarkScore |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 151001:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestKsingSwitch", wireType)
+			}
+			m.RequestKsingSwitch = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestKsingSwitch |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 181001:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field RequestMutalmarkLbsShare", wireType)
+			}
+			m.RequestMutalmarkLbsShare = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtobufStruct
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.RequestMutalmarkLbsShare |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipProtobufStruct(dAtA[iNdEx:])

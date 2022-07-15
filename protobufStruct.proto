@@ -13,3 +13,17 @@ message DeviceInfoBytesStruct {
     string BaseBand = 8;
     string InnerVersion = 9;
 }
+
+message D50RequestStruct {
+    uint64 AppId = 1;
+    uint32 MaxPackageSize = 2;
+    uint32 StartTime = 3;
+    uint32 StartIndex = 4;
+    uint32 RequestNum = 5;
+    repeated uint64 UinList = 6;
+    uint32 RequestMusicSwitch = 91001;
+    uint32 RequestMutualmarkAlienation = 101001;
+    uint32 RequestMutualmarkScore = 141001;
+    uint32 RequestKsingSwitch = 151001;
+    uint32 RequestMutalmarkLbsShare = 181001;
+}
