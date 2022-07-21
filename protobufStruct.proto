@@ -3,27 +3,46 @@ syntax = "proto3";
 option go_package = "github.com/littlefish12345/go-qq-protobuf";
 
 message DeviceInfoBytesStruct {
-    string Bootloader = 1;
-    string ProcVersion = 2;
-    string CodeName = 3;
-    string Incremental = 4;
-    string FingerPrint = 5;
-    string BootId = 6;
-    string AndroidId = 7;
-    string BaseBand = 8;
-    string InnerVersion = 9;
+    optional string Bootloader = 1;
+    optional string ProcVersion = 2;
+    optional string CodeName = 3;
+    optional string Incremental = 4;
+    optional string FingerPrint = 5;
+    optional string BootId = 6;
+    optional string AndroidId = 7;
+    optional string BaseBand = 8;
+    optional string InnerVersion = 9;
 }
 
 message D50RequestStruct {
-    uint64 AppId = 1;
-    uint32 MaxPackageSize = 2;
-    uint32 StartTime = 3;
-    uint32 StartIndex = 4;
-    uint32 RequestNum = 5;
+    optional uint64 AppId = 1;
+    optional uint32 MaxPackageSize = 2;
+    optional uint32 StartTime = 3;
+    optional uint32 StartIndex = 4;
+    optional uint32 RequestNum = 5;
     repeated uint64 UinList = 6;
-    uint32 RequestMusicSwitch = 91001;
-    uint32 RequestMutualmarkAlienation = 101001;
-    uint32 RequestMutualmarkScore = 141001;
-    uint32 RequestKsingSwitch = 151001;
-    uint32 RequestMutalmarkLbsShare = 181001;
+    optional uint32 RequestLovers = 11002;
+    optional uint32 RequestConfidante = 21002;
+    optional uint32 RequestBuddy = 31002;
+    optional uint32 RequestFriendTree = 41001;
+    optional uint32 RequestChat = 51001;
+    optional uint32 RequestPraise = 61001;
+    optional uint32 RequestQzoneLove = 71001;
+    optional uint32 RequestQzoneHouse = 81001;
+    optional uint32 RequestMusicSwitch = 91001;
+    optional uint32 RequestMutualmarkAlienation = 101001;
+    optional uint32 RequestUnreadMessage = 111001;
+    optional uint32 RequestBoat = 121001;
+    optional uint32 RequestCloseFriend = 131001;
+    optional uint32 RequestMutualmarkScore = 141001;
+    optional uint32 RequestKsingSwitch = 151001;
+    optional uint32 RequestMutalmarkLbsShare = 181001;
+    optional uint32 RequestDontForgetMe = 211001;
+    optional uint32 RequestMyOnlineStatusVisibleToFriend = 221001;
+    optional uint32 RequestFriendOnlineStatusVisibleToMe = 221002;
+    optional uint32 RequestVisitorRecord = 231001;
+    optional uint32 RequestFriendStealRecord = 231002;
+    optional uint32 RequestMyStealRecord = 231003;
+    optional uint32 RequestAvgame = 241001;
+    optional uint32 RequestAioQuickApp = 251001;
 }
