@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+option go_package = "github.com/littlefish12345/go-qq-protobuf";
+
+import "message/messageHead.proto";
+import "message/messageBody.proto";
+
+message ContentHead {
+    optional uint32 PackageNum = 1;
+    optional uint32 PackageIndex = 2;
+    optional uint32 DivSeqence = 3;
+    optional uint32 AutoReply = 4;
+}
+
+message PluginInfo {
+    optional uint32 ResId = 1;
+    optional string PackageName = 2;
+    optional uint32 NewVersion = 3;
+    optional uint32 ResType = 4;
+    optional uint32 LanType = 5;
+    optional uint32 Priority = 6;
+    optional string ResName = 7;
+    optional string ResDesc = 8;
+    optional string ResUrlBig = 9;
+    optional string ResUrlSmall = 10;
+    optional string ResConf = 11;
+}
+
+message AppShareInfo {
+    optional uint32 AppShareId = 1;
+    optional bytes AppShareCookie = 2;
+    optional PluginInfo AppShareResource = 3;
+}
+
+message Message {
+    optional MessageHead MessageHead = 1;
+    optional ContentHead MessageContent = 2;
+    optional MessageBody MessageBody = 3;
+    optional AppShareInfo AppShareInfo = 4;
+}
+
+message UinPairMessages {
+    optional uint32 LastReadTime = 1;
+    optional int64 PeerUin = 2;
+    optional uint32 MessagCompleted = 3;
+    repeated Message Message = 4;
+    optional uint32 UnreadMessageNum = 5;
+    optional uint32 C2CType = 8;
+    optional uint32 ServiceType = 9;
+    optional bytes PbReserve = 10;
+    optional uint64 ToTinyId = 11;
+}

@@ -2,6 +2,8 @@ syntax = "proto3";
 
 option go_package = "github.com/littlefish12345/go-qq-protobuf";
 
+import "message/message.proto";
+
 message DeviceInfoBytesStruct {
     optional string Bootloader = 1;
     optional string ProcVersion = 2;
@@ -45,4 +47,32 @@ message D50RequestStruct {
     optional uint32 RequestMyStealRecord = 231003;
     optional uint32 RequestAvgame = 241001;
     optional uint32 RequestAioQuickApp = 251001;
+}
+
+message GetMessageRequestStruct {
+    optional uint32 SyncFlag = 1;
+    optional bytes SyncCookie = 2;
+    optional uint32 RambleFlag = 3;
+    optional uint32 LatestRambleNumber = 4;
+    optional uint32 OtherRambleNumber = 5;
+    optional uint32 OnlineSyncFlag = 6;
+    optional uint32 ContextFlag = 7;
+    optional uint32 WhisperSessionId = 8;
+    optional uint32 MessageRequestType = 9;
+    optional bytes PublicAccountCookie = 10;
+    optional bytes MessageControlBuffer = 11;
+    optional bytes ServerBuffer = 12;
+}
+
+message GetMessageResponse {
+    optional uint32 Result = 1;
+    optional string ErrorMessage = 2;
+    optional bytes SyncCookie = 3;
+    optional uint32 SyncFlag = 4;
+    repeated UinPairMessages UinPairMessages = 5;
+    optional int64 BindUin = 6;
+    optional uint32 MessageResponseType = 7;
+    optional bytes PublicAccountCookie = 8;
+    optional bool IsPartialSync = 9;
+    optional bytes MessageControlBuffer = 10;
 }

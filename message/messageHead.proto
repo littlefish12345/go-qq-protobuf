@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+option go_package = "github.com/littlefish12345/go-qq-protobuf";
+
+message C2CTempMessageHead {
+    optional uint32 C2CType = 1;
+    optional uint32 ServiceType = 2;
+    optional uint64 GroupUin = 3;
+    optional uint64 GroupCode = 4;
+    optional bytes Sig = 5;
+    optional uint32 SigType = 6;
+    optional string FromPhone = 7;
+    optional string ToPhone = 8;
+    optional uint32 LockDisplay = 9;
+    optional uint32 DirectionFlag = 10;
+    optional bytes Reserved = 11;
+    optional bytes BusinessName = 14;
+    optional bytes BusinessSubContent = 15;
+}
+
+message GroupInfo {
+    optional uint64 GroupCode = 1;
+    optional uint32 GroupType = 2;
+    optional uint64 GroupInfoSeqence = 3;
+    optional bytes GroupCard = 4;
+    optional bytes GroupRank = 5;
+    optional uint32 GroupLevel = 6;
+    optional uint32 GroupCardType = 7;
+    optional bytes GroupName = 8;
+}
+
+message DiscussInfo {
+    optional uint64 DiscussUin = 1;
+    optional uint32 DiscussType = 2;
+    optional uint64 DiscussInfoSeqence = 3;
+    optional bytes DiscussRemark = 4;
+    optional bytes DiscussName = 5;
+}
+
+message MutilTransHead {
+    optional uint32 Status = 1;
+    optional uint32 MessageId = 2;
+}
+
+message InstInfo {
+    optional uint32 AppPid = 1;
+    optional uint32 InstId = 2;
+    optional uint32 Platform = 3;
+    optional uint32 EnumDeviceType = 10;
+}
+
+message InstCtrl {
+    repeated InstInfo SendToInst = 1;
+    repeated InstInfo ExcludeInst = 2;
+    optional InstInfo FromInst = 3;
+}
+
+message ExtGroupKeyInfo {
+    optional uint32 CurrentMaxSeqence = 1;
+    optional uint64 CurrentTime = 2;
+    optional uint32 OperateByParents = 3;
+    optional bytes ExtGroupInfo = 4;
+}
+
+message MessageHead {
+    optional int64 FromUin = 1;
+    optional int64 ToUin = 2;
+    optional uint32 MessageType = 3;
+    optional uint32 C2CCmd = 4;
+    optional uint32 MessageSeqence = 5;
+    optional uint32 MessageTime = 6;
+    optional uint64 MessageUid = 7;
+    optional C2CTempMessageHead C2CTempMessageHead = 8;
+    optional GroupInfo GroupInfo = 9;
+    optional uint32 FromAppId = 10;
+    optional uint32 FromInstId = 11;
+    optional uint32 UserActive = 12;
+    optional DiscussInfo DiscussInfo = 13;
+    optional string FromNickname = 14;
+    optional int64 AuthUin = 15;
+    optional string AuthNickname = 16;
+    optional uint32 MessageFlag = 17;
+    optional string AuthRemark = 18;
+    optional string GroupName = 19;
+    optional MutilTransHead MutilTransHead = 20;
+    optional InstCtrl MessageInstCtrl = 21;
+    optional uint32 PublicAccountGroupSendFlag = 22;
+    optional uint32 WseqInC2CMessageHead = 23;
+    optional uint64 CpId = 24;
+    optional ExtGroupKeyInfo ExtGroupKeyInfo = 25;
+    optional string MultiCompatibleText = 26;
+    optional uint32 AuthSex = 27;
+    optional bool IsSourceMessage = 28;
+}
